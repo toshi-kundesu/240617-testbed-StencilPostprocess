@@ -2,14 +2,24 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Camera))]
+// [ExecuteInEditMode]
 public class CommandBufferPostEffect : MonoBehaviour {
 
     [SerializeField]
     private Shader _shader;
+    [SerializeField]
+    private bool _isActive = true;
 
     private void Awake () {
+        
         Initialize();
     }
+
+    // private void OnValidate() {
+    //     if (_isActive) {
+    //         Initialize();
+    //     }
+    // }
 
     private void Initialize()
     {
